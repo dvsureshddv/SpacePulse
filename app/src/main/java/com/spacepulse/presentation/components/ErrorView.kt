@@ -1,4 +1,4 @@
-package com.spacepulse.presentation.ui
+package com.spacepulse.presentation.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -16,7 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.spacepulse.R
-import com.spacepulse.presentation.ui.theme.PrimaryColor
+import com.spacepulse.presentation.theme.PrimaryColor
 
 //error view with retry
 @Composable

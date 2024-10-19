@@ -1,7 +1,5 @@
 package com.spacepulse.network_module.domain.models
 
-import java.io.Serializable
-
 data class Article(
 
     var id: Long? = null,
@@ -9,4 +7,4 @@ data class Article(
     var summary: String? = null,
     var imageUrl: String? = null,
     var newsSite: String? = null,
-) : Serializable
+)

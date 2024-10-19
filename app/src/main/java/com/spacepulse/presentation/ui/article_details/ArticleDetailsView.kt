@@ -1,10 +1,11 @@
-package com.spacepulse.presentation.ui
+package com.spacepulse.presentation.ui.article_details
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Scaffold
@@ -21,9 +22,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import coil.compose.AsyncImage
+import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
 import com.spacepulse.R
+import com.spacepulse.presentation.components.CustomAppBar
+import com.spacepulse.presentation.components.ShimmerEffect
 import com.spacepulse.presentation.view_models.NewsViewModel
 
 @Composable
@@ -74,14 +77,26 @@ fun ArticleDetailsView(
                 .crossfade(true)
                 .build()
 
-            //load image from url
-            AsyncImage(
+            SubcomposeAsyncImage(
                 model = imageRequest,
                 contentDescription = stringResource(R.string.app_name),
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxWidth(), // Make image fill max width
+                modifier = Modifier.fillMaxSize(),
+                loading = {
+                    ShimmerEffect(
+                        modifier = Modifier
+                            .width(100.dp)
+                            .height(100.dp)
+                    )
+                },
+                error = {
+                    ShimmerEffect(
+                        modifier = Modifier
+                            .width(100.dp)
+                            .height(100.dp)
+                    )
+                }
             )
-
 
             //spacing
             Spacer(modifier = Modifier.height(8.dp))

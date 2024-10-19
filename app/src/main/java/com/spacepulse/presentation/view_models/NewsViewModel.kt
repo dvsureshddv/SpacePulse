@@ -1,5 +1,6 @@
 package com.spacepulse.presentation.view_models
 
+import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.spacepulse.core_module.domain.repositories.DefaultDispatcherRepository
@@ -18,13 +19,14 @@ class NewsViewModel @Inject constructor(
     private val dispatcherRepository: DefaultDispatcherRepository
 ) : ViewModel() {
 
-    //variable for tracking the result of articles
+    //variable for the result of articles
     private val _articles = MutableSharedFlow<Result<List<Article>>>(replay = 1)
-
     //variable for observing the state
     val articles: SharedFlow<Result<List<Article>>> = _articles
 
+    //variable for selected article
     private val _selectedArticle = MutableSharedFlow<Article?>(replay = 1)
+    //variable for observing the state
     val selectedArticle: SharedFlow<Article?> = _selectedArticle
 
     //initial call to fetch the news articles
@@ -48,5 +50,6 @@ class NewsViewModel @Inject constructor(
             _selectedArticle.emit(article)
         }
     }
+
 
 }

@@ -2,7 +2,7 @@ package com.spacepulse.route
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import com.spacepulse.presentation.ui.ArticleDetailsView
+import com.spacepulse.presentation.ui.article_details.ArticleDetailsView
 import com.spacepulse.presentation.view_models.NewsViewModel
 
 //article details routing

@@ -1,4 +1,4 @@
-package com.spacepulse.presentation.ui.utility
+package com.spacepulse.presentation.utility
 
 import android.content.Context
 import com.spacepulse.R

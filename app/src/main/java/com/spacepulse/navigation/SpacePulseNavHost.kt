@@ -7,7 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.spacepulse.presentation.view_models.NewsViewModel
 
 @Composable
-fun APPNavHost() {
+fun SpacePulseNavHost() {
     val navController = rememberNavController()
     val newsViewModel: NewsViewModel = hiltViewModel()
 

@@ -14,7 +14,7 @@
         android:theme="@style/Theme.SpacePulse"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.ui.ArticleActivity"
+            android:name=".presentation.ui.article_list.ArticleActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.SpacePulse">

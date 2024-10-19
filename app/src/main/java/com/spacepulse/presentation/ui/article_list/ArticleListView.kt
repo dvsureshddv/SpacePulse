@@ -1,7 +1,5 @@
-package com.spacepulse.presentation.ui
+package com.spacepulse.presentation.ui.article_list
 
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -10,7 +8,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -19,7 +16,9 @@ import com.spacepulse.R
 import com.spacepulse.core_module.utility.Result
 import com.spacepulse.navigation.Routes
 import com.spacepulse.network_module.domain.models.Article
-import com.spacepulse.presentation.ui.utility.getErrorMessage
+import com.spacepulse.presentation.components.CustomAppBar
+import com.spacepulse.presentation.components.ErrorView
+import com.spacepulse.presentation.utility.getErrorMessage
 import com.spacepulse.presentation.view_models.NewsViewModel
 
 
@@ -27,8 +26,10 @@ import com.spacepulse.presentation.view_models.NewsViewModel
 fun ArticleListView(
     newsViewModel: NewsViewModel,
     navController: NavController,
+
 ) {
     val articlesResult by newsViewModel.articles.collectAsState(initial = Result.Loading) // article results
+
     val context = LocalContext.current // current context
     var isRefreshing by remember { mutableStateOf(false) } // refresh state
 
@@ -85,11 +86,10 @@ fun ArticleListView(
             }
         }
 
-        //based on condition show the progress
+        //based on condition show the shimmer effect
         if (isRefreshing) {
-            LoadingIndicator(
-                modifier = Modifier.fillMaxSize(),
-                alignment = Alignment.Center
+            ArticleListShimmer(
+                modifier = Modifier.padding(paddingValues),
             )
         }
 

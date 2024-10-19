@@ -1,4 +1,4 @@
-package com.spacepulse.presentation.ui.theme
+package com.spacepulse.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

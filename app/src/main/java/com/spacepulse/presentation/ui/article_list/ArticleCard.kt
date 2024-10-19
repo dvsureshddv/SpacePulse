@@ -1,4 +1,4 @@
-package com.spacepulse.presentation.ui
+package com.spacepulse.presentation.ui.article_list
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
