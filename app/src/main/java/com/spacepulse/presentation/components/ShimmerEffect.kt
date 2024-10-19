@@ -15,10 +15,13 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
+//shimmer effect
 @Composable
 fun ShimmerEffect(modifier: Modifier = Modifier) {
 
+    //infinite transition
     val infiniteTransition = rememberInfiniteTransition(label = "")
+    //shimmer offset values
     val shimmerOffset by infiniteTransition.animateFloat(
         initialValue = 0f,
         targetValue = 1f,
@@ -29,12 +32,14 @@ fun ShimmerEffect(modifier: Modifier = Modifier) {
         label = ""
     )
 
+    //default shimmer background colors
     val shimmerColors = listOf(
         Color.LightGray.copy(alpha = 0.6f),
         Color.LightGray.copy(alpha = 0.3f),
         Color.LightGray.copy(alpha = 0.6f)
     )
 
+    //gradient
     val brush = Brush.linearGradient(
         colors = shimmerColors,
         start = Offset(0f, 0f),
@@ -42,6 +47,7 @@ fun ShimmerEffect(modifier: Modifier = Modifier) {
 
     )
 
+    //spacer
     Spacer(modifier = modifier.background(brush))
 
 }
