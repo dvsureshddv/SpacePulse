@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Space Pulse</string>
+    <string name="internet_error">"No internet connection. Please check your connection and try again."</string>
+    <string name="articles_not_found_error">"No articles available at the moment."</string>
+    <string name="unexpected_error">"An unexpected error occurred. Please try again later."</string>
+    <string name="retry">"Retry"</string>
+    <string name="back">"Back"</string>
+    <string name="article_details">"Article Details"</string>
+</resources>
