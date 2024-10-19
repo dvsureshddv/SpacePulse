@@ -1,6 +1,5 @@
 package com.spacepulse.presentation.view_models
 
-import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.spacepulse.core_module.domain.repositories.DefaultDispatcherRepository
@@ -8,9 +7,7 @@ import com.spacepulse.core_module.utility.Result
 import com.spacepulse.domain.use_cases.GetArticleUseCase
 import com.spacepulse.network_module.domain.models.Article
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
