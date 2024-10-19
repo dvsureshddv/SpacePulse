@@ -20,3 +20,8 @@ Space Pulse is a mobile application that aggregates the latest news articles rel
 ![space_pulse_3](https://github.com/user-attachments/assets/d36ae257-60da-420b-a028-a9e5802feb3f)
 
 
+**Flow Video**
+
+https://github.com/user-attachments/assets/e8ad0178-73a2-48e9-a9bd-42d911f9325f
+
+
