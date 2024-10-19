@@ -9,7 +9,7 @@ import com.spacepulse.route.ArticleDetailsScreenRoute
 import com.spacepulse.route.ArticleListScreenRoute
 
 
-//Nav graph builder for various routes
+//nav graph builder for various routes
 fun NavGraphBuilder.articleListRoute(
     navController: NavHostController,
     newsViewModel: NewsViewModel,

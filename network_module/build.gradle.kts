@@ -48,6 +48,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.kotlinx.coroutines.test)
+    androidTestImplementation(libs.mockito.android)
+    testImplementation(libs.arch.core.testing)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.hilt.android.testing)
+    kaptTest(libs.hilt.compiler)
+    kaptAndroidTest(libs.hilt.android.compiler)
+
     //adding core module
     implementation(project(":core_module"))
 }
