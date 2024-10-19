@@ -9,7 +9,9 @@ import com.spacepulse.domain.use_cases.GetArticleUseCase
 import com.spacepulse.network_module.domain.models.Article
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -20,14 +22,14 @@ class NewsViewModel @Inject constructor(
 ) : ViewModel() {
 
     //variable for the result of articles
-    private val _articles = MutableSharedFlow<Result<List<Article>>>(replay = 1)
+    private val _articles = MutableStateFlow<Result<List<Article>>>(Result.Loading)
     //variable for observing the state
-    val articles: SharedFlow<Result<List<Article>>> = _articles
+    val articles: StateFlow<Result<List<Article>>> = _articles
 
     //variable for selected article
-    private val _selectedArticle = MutableSharedFlow<Article?>(replay = 1)
+    private val _selectedArticle = MutableStateFlow<Article?>(Article())
     //variable for observing the state
-    val selectedArticle: SharedFlow<Article?> = _selectedArticle
+    val selectedArticle: StateFlow<Article?> = _selectedArticle
 
     //initial call to fetch the news articles
     init {
@@ -37,9 +39,9 @@ class NewsViewModel @Inject constructor(
     /*get latest results from the api*/
     fun fetchArticles() {
         viewModelScope.launch(dispatcherRepository.io) {
-            _articles.emit(Result.Loading)
+            _articles.value = Result.Loading
             val result = getArticlesUseCase.getArticles()
-            _articles.emit(result)
+            _articles.value = result
         }
 
     }

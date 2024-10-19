@@ -15,6 +15,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
+import org.mockito.Mockito.mock
 import org.mockito.kotlin.whenever
 
 
@@ -27,9 +28,9 @@ class NewsRepositoryImplTest {
 
     @Before
     fun setUp() {
-        connectionApi = Mockito.mock(ConnectionApi::class.java)
-        dispatcherRepo = Mockito.mock(DefaultDispatcherRepository::class.java)
-        networkStateRepo = Mockito.mock(NetworkStateRepo::class.java)
+        connectionApi = mock(ConnectionApi::class.java)
+        dispatcherRepo = mock(DefaultDispatcherRepository::class.java)
+        networkStateRepo = mock(NetworkStateRepo::class.java)
         // mock dispatcherRepo for io dispatcher
         whenever(dispatcherRepo.io).thenReturn(Dispatchers.IO)
 

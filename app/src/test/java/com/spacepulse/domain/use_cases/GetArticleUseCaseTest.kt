@@ -21,7 +21,7 @@ class GetArticleUseCaseTest {
         //mock news repository
         newsRepository = mock(NewsRepository::class.java)
         //get article use case instance
-        getArticleUseCase = GetArticleUseCase(newsRepository)
+        getArticleUseCase = GetArticleUseCase(newsRepository = newsRepository)
     }
 
     //articles successfully returned case

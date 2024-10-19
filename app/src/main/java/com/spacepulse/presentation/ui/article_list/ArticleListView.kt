@@ -27,7 +27,7 @@ fun ArticleListView(
     newsViewModel: NewsViewModel,
     navController: NavController,
 
-) {
+    ) {
     val articlesResult by newsViewModel.articles.collectAsState(initial = Result.Loading) // article results
 
     val context = LocalContext.current // current context
@@ -45,8 +45,7 @@ fun ArticleListView(
                     newsViewModel.fetchArticles()
                 },
                 onBackButtonClick = {},
-
-                )
+            )
 
         }
     ) { paddingValues ->
