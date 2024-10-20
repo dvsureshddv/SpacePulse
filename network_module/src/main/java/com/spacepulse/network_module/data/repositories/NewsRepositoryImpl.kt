@@ -26,6 +26,7 @@ class NewsRepositoryImpl @Inject constructor(
                     ErrorType.NETWORK_ERROR
                 )
 
+            //trigger articles api call
             val response = connectionApi.getArticles()
             //convert response to domain model to use in view
             val articles = response.toArticlesList()
