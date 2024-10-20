@@ -46,7 +46,7 @@ class NewsViewModel @Inject constructor(
     //set the selected article
     fun setSelectedArticle(article: Article) {
         viewModelScope.launch {
-            _selectedArticle.emit(article)
+            _selectedArticle.value = article
         }
     }
 
