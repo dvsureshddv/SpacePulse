@@ -34,7 +34,7 @@ fun ArticleCard(article: Article, onClick: () -> Unit) {
         ) {
             //title view
             Text(
-                text = article.title ?: "-",
+                text = article.title,
                 style = TextStyle(
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold
@@ -43,7 +43,7 @@ fun ArticleCard(article: Article, onClick: () -> Unit) {
             //space
             Spacer(modifier = Modifier.height(8.dp))
             //news site view
-            Text(text = "source: ${article.newsSite ?: "-"}")
+            Text(text = "source: ${article.newsSite}")
 
         }
 

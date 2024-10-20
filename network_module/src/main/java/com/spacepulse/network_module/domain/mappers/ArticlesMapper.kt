@@ -14,11 +14,11 @@ object ArticlesMapper {
     //convert article dto to article
     private fun ArticleDto.toArticle(): Article {
         return Article(
-            id = id,
-            title = title,
-            summary = summary,
-            imageUrl = imageUrl,
-            newsSite = newsSite
+            id = id ?: 1L,
+            title = title ?: "-",
+            summary = summary ?: "-",
+            imageUrl = imageUrl ?: "",
+            newsSite = newsSite ?: ""
         )
     }
 }

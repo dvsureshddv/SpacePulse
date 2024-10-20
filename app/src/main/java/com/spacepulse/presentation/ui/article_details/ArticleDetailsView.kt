@@ -103,7 +103,7 @@ fun ArticleDetailsView(
 
             //summary text
             Text(
-                text = "Summary:\n${article?.summary ?: "-"}",
+                text = "Summary:\n${article?.summary}",
                 fontSize = 18.sp,
                 textAlign = TextAlign.Start
             )
